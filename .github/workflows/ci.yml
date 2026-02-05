@@ -59,3 +59,8 @@ jobs:
     
     - name: Check TypeScript compilation
       run: npx tsc --noEmit
+
+    - name: Test with Docker
+      run: |
+        docker build -t qa-tests .
+        docker run --rm qa-tests
